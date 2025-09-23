@@ -5,7 +5,7 @@ import (
 )
 
 type User struct {
-	Id              uint
+	Id              int
 	Nombre          string
 	Rut             string
 	FechaNacimiento time.Time

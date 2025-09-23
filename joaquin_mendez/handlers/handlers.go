@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/gin-gonic/gin"
@@ -24,11 +25,56 @@ func Post_users(ctx *gin.Context) {
 		log.Fatalln("error1=", err)
 	}
 
-	htmlRes := "creado"
+	htmlRes := `
+	Usuario creado con exito.
+	`
 	ctx.String(200, htmlRes)
 }
 
 func Get_users(ctx *gin.Context) {
 
-	ctx.String(200, "usuarios")
+	rows, err := db.Conectar().Query("SELECT * FROM usersTest")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	/*
+			htmlHead := `
+		        	<table>
+		            	<tr>
+		                	<th>Id</th>
+		                	<th>Nombre</th>
+							<th>Rut</th>
+							<th>Fecha Nacimiento</th>
+							<th>Telefono</th>
+							<th>Email</th>
+		            	</tr>
+				`
+	*/
+	for rows.Next() {
+		var data models.User
+		err := rows.Scan(&data.Id, &data.Nombre, &data.Rut, &data.FechaNacimiento, &data.Telefono, &data.Email)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		htmlRes := fmt.Sprintln("id=", data.Nombre)
+		ctx.String(200, htmlRes)
+
+		/*
+					var htmlBody = `
+						<tr>
+			               	<td>` + strconv.Itoa(data.Id) + `</td>
+			               	<td>` + data.Nombre + `</td>
+							<td>` + data.Rut + `</td>
+							<td>` + data.FechaNacimiento.Format("02-10-2006") + `</td>
+							<td>` + data.Telefono + `</td>
+							<td>` + data.Email + `</td>
+			            </tr>
+					`
+					htmla := "</table>"
+					ctx.String(200, htmlHead+htmlBody+htmla)
+		*/
+
+	}
 }
