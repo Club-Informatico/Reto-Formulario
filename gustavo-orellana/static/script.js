@@ -51,6 +51,7 @@ window.addEventListener('DOMContentLoaded', function () {
         mostrarIcono(telefonoInput, telefonoValido);
 
         if (!rutValido || !emailValido || !telefonoValido) {
+            alert('corregir campos')
             e.preventDefault();
         }
     });
