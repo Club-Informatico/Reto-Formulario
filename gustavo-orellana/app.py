@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, redirect
 import sqlite3
 
-conexion = sqlite3.connect('db.db')
+conexion = sqlite3.connect('gustavo-orellana/db.db')
 cursor = conexion.cursor()
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS usuarios (
@@ -24,7 +24,7 @@ def index():
 @app.route('/add_usuario' , methods = ['POST'])
 
 def add_usuario():
-    conexion = sqlite3.connect('db.db')
+    conexion = sqlite3.connect('gustavo-orellana/db.db')
     cursor = conexion.cursor()
     if request.method == 'POST':
         nombre = request.form['nombre']
