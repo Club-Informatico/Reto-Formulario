@@ -113,3 +113,10 @@ Súbelo, muéstralo y motiva a otros a unirse al Club Informático 🚀.
      </td>
   </tr>
 </table>
+
+## Contributors
+
+<a href="https://github.com/Club-Informatico/Reto-Formulario/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Club-Informatico/Reto-Formulario" />
+</a>
+
