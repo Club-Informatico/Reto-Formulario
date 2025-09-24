@@ -22,7 +22,7 @@ Mi fuerte no es el diseño, asi que los Front por favor no me linchen😅, se qu
 Para correr el proyecto, si tienen go instalado solo basta con correr el siguiente comando:
 
 ```bash
-    go run .
+go run .
 ```
 
 Para los que no, también esta la opción de Docker:
@@ -31,12 +31,12 @@ Para los que no, también esta la opción de Docker:
 
 2- Construir imagen docker
 ```
-    docker build -t reto-formulario .
+docker build -t reto-formulario .
 ```
 
 3- Correr imagen docker
 ```
-    docker run --rm -p 3000:3000 reto-formulario
+docker run --rm -p 3000:3000 reto-formulario
 ```
 
 4- Acceder a traves de *localhost:3000/static*
