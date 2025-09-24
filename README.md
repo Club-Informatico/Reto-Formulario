@@ -114,7 +114,7 @@ Súbelo, muéstralo y motiva a otros a unirse al Club Informático 🚀.
   </tr>
 </table>
 
-## Contributors
+## Colaboradores
 
 <a href="https://github.com/Club-Informatico/Reto-Formulario/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Club-Informatico/Reto-Formulario" />
