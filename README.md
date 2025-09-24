@@ -90,10 +90,16 @@ Súbelo, muéstralo y motiva a otros a unirse al Club Informático 🚀.
         <img src="https://avatars.githubusercontent.com/u/24437321?v=4" width="140" />
       </a>
     </td>
+     <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/177916251?v=4" width="140" />
+      </a>
+    </td>
   </tr>
   <tr>
     <td align="center">Matias N. Salas <img src="https://rawcdn.githack.com/twitter/twemoji/v14.0.2/assets/svg/1f1e8-1f1f1.svg" width="16" /></td>
     <td align="center">Francisco Briones <img src="https://rawcdn.githack.com/twitter/twemoji/v14.0.2/assets/svg/1f1e8-1f1f1.svg" width="16" /></td>
+    <td align="center">Alice Muñoz <img src="https://rawcdn.githack.com/twitter/twemoji/v14.0.2/assets/svg/1f1e8-1f1f1.svg" width="16" /></td>
   </tr>
   <tr>
      <td align="center">
@@ -101,6 +107,9 @@ Súbelo, muéstralo y motiva a otros a unirse al Club Informático 🚀.
      </td>
      <td align="center">
      <img src="https://twemoji.maxcdn.com/v/latest/svg/1f948.svg" width="64" alt="Medalla de oro" />
+     </td>
+     <td align="center">
+     <img src="https://twemoji.maxcdn.com/v/latest/svg/1f949.svg" width="64" alt="Medalla de oro" />
      </td>
   </tr>
 </table>

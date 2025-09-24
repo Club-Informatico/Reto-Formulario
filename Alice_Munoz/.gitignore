@@ -1,0 +1,7 @@
+venv/
+database.db
+__pycache__/
+*.pyc
+.idea/
+.python-version
+
