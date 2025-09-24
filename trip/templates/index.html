@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulario</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <form id="form" novalidate>
+    <h1 class="h3 text-center mb-4">Formulario de registro</h1>
+
+    <label for="nombre" class="nombre1">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="rut">RUT:</label>
+    <input type="text" id="rut" name="rut" required placeholder="12.345.678-5">
+
+    <label for="fecha">Fecha de nacimiento:</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" required placeholder="+56 9 1234 5678">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="submit">Enviar</button>
+    <div id="formMsg" role="alert" aria-live="polite"></div>
+
+    <div class="actions">
+      <button type="button" id="deleteToggleBtn" class="btn-delete">Eliminar Usuario</button>
+      <button type="button" id="editToggleBtn" class="btn-edit">Editar Usuario</button>
+    </div>
+  </form>
+
+  <!-- Panel de eliminación -->
+  <section id="deletePanel" class="hidden" aria-live="polite">
+    <h2>Usuarios</h2>
+    <div id="usersContainer">
+      <p id="usersEmpty" class="muted">No existen usuarios</p>
+      <ul id="usersList" class="user-list"></ul>
+    </div>
+    <button type="button" id="confirmDeleteBtn" class="danger" disabled>Confirmar eliminación</button>
+  </section>
+
+  <!-- Panel de edición -->
+  <section id="editPanel" class="hidden" aria-live="polite">
+    <h2>Editar Usuario</h2>
+    <form id="editForm" novalidate>
+      <div class="grid">
+        <div class="col">
+          <label for="rutEdit">RUT a editar</label>
+          <input type="text" id="rutEdit" name="rutEdit" placeholder="12.345.678-5" required>
+        </div>
+        <div class="col fit">
+          <button type="button" id="loadByRutBtn" class="secondary">Buscar</button>
+        </div>
+      </div>
+
+      <div id="editFields" class="hidden">
+        <label for="nombreEdit">Nombre completo</label>
+        <input type="text" id="nombreEdit" name="nombreEdit">
+
+        <label for="fechaEdit">Fecha de nacimiento</label>
+        <input type="date" id="fechaEdit" name="fechaEdit">
+
+        <label for="telefonoEdit">Teléfono</label>
+        <input type="tel" id="telefonoEdit" name="telefonoEdit" placeholder="+56 9 1234 5678">
+
+        <label for="emailEdit">Email</label>
+        <input type="email" id="emailEdit" name="emailEdit">
+
+        <button type="button" id="saveEditBtn" class="primary">Guardar cambios</button>
+      </div>
+
+      <div id="editMsg" role="alert" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <!-- fuerza recarga del JS si está cacheado -->
+  <script src="{{ url_for('static', filename='app.js', v=4) }}"></script>
+</body>
+</html>
