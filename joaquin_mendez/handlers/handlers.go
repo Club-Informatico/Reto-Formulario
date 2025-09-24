@@ -7,7 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 	db "github.com/juackomdz/reto-formulario/database"
 	"github.com/juackomdz/reto-formulario/models"
-	_ "github.com/juackomdz/reto-formulario/models"
 )
 
 func Post_users(ctx *gin.Context) {
