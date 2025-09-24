@@ -16,7 +16,7 @@ func Conectar() *sql.DB {
 		os.Exit(1)
 	}
 
-	_, err = sqldb.Exec("CREATE TABLE IF NOT EXISTS usersTest (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, rut TEXT, fecha_nacimiento DATETIME, telefono TEXT, email TEXT)")
+	_, err = sqldb.Exec("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, rut TEXT, fecha_nacimiento DATETIME, telefono TEXT, email TEXT)")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to execute query: %v\n", err)
 		os.Exit(1)
