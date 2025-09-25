@@ -8,7 +8,7 @@ type User struct {
 	Id              int
 	Nombre          string
 	Rut             string
-	FechaNacimiento time.Time
+	FechaNacimiento *time.Time
 	Telefono        string
 	Email           string
 }

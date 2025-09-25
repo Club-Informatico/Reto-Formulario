@@ -37,19 +37,6 @@ func Get_users(ctx *gin.Context) {
 		log.Fatalln(err)
 	}
 
-	htmlHead := `
-				<div>
-		        	<table>
-		            	<tr>
-		                	<th>Id</th>
-		                	<th>Nombre</th>
-							<th>Rut</th>
-							<th>Fecha Nacimiento</th>
-							<th>Telefono</th>
-							<th>Email</th>
-		            	</tr>
-				`
-
 	for rows.Next() {
 		var data models.User
 		err := rows.Scan(&data.Id, &data.Nombre, &data.Rut, &data.FechaNacimiento, &data.Telefono, &data.Email)
@@ -58,17 +45,15 @@ func Get_users(ctx *gin.Context) {
 		}
 
 		htmlBody := `
-						<tr>
-			               	<td>` + strconv.Itoa(data.Id) + `</td>
-			               	<td>` + data.Nombre + `</td>
-							<td>` + data.Rut + `</td>
-							<td>` + data.FechaNacimiento.Format("02-01-2006") + `</td>
-							<td>` + data.Telefono + `</td>
-							<td>` + data.Email + `</td>
-			            </tr>
-					</table>
-				</div>
+					<tr>
+			        	<td>` + strconv.Itoa(data.Id) + `</td>
+			        	<td>` + data.Nombre + `</td>
+						<td>` + data.Rut + `</td>
+						<td>` + data.FechaNacimiento.Format("02-01-2006") + `</td>
+						<td>` + data.Telefono + `</td>
+						<td>` + data.Email + `</td>
+					</tr>
 					`
-		ctx.String(200, htmlHead+htmlBody)
+		ctx.String(200, htmlBody)
 	}
 }
