@@ -19,7 +19,7 @@ De momento solo estan la función de agregar y listar los usuarios. Talvez más 
 Mi fuerte no es el diseño, asi que los Front por favor no me linchen😅, se que el diseño no esta muy prolijo.
 ## Deployment
 
-Para correr el proyecto, si tienen go instalado solo basta con correr el siguiente comando:
+Para correr el proyecto, si tienen go instalado(versión 1.24.3 en adelante) solo basta con correr el siguiente comando:
 
 ```bash
 go run .
