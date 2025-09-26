@@ -10,6 +10,19 @@ function validarTelefono(telefono) {
     return /^\+56\s?9\s?\d{4}\s?\d{4}$/.test(telefono);
 }
 
+function validarNombre(nombre) {
+    return /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nombre.trim());
+}
+
+function validarFechaNacimiento(fecha) {
+    if (!fecha) return false;
+    const hoy = new Date();
+    const fechaIngresada = new Date(fecha);
+    // Solo compara fechas, no horas
+    hoy.setHours(0,0,0,0);
+    fechaIngresada.setHours(0,0,0,0);
+    return fechaIngresada < hoy;
+}
 
 function mostrarIcono(input, esValido) {
     let icono = input.nextElementSibling;
@@ -28,6 +41,8 @@ window.addEventListener('DOMContentLoaded', function () {
     const rutInput = document.getElementById('rut');
     const emailInput = document.getElementById('email');
     const telefonoInput = document.getElementById('telefono');
+    const nombreInput = document.getElementById('nombre');
+    const fechaInput = document.getElementById('fecha');
 
     rutInput.addEventListener('input', function () {
         mostrarIcono(rutInput, validarRut(rutInput.value));
@@ -41,17 +56,29 @@ window.addEventListener('DOMContentLoaded', function () {
         mostrarIcono(telefonoInput, validarTelefono(telefonoInput.value));
     });
 
+    nombreInput.addEventListener('input', function () {
+        mostrarIcono(nombreInput, validarNombre(nombreInput.value));
+    });
+
+    fechaInput.addEventListener('input', function () {
+        mostrarIcono(fechaInput, validarFechaNacimiento(fechaInput.value));
+    });
+
     form.addEventListener('submit', function (e) {
         const rutValido = validarRut(rutInput.value);
         const emailValido = validarEmail(emailInput.value);
         const telefonoValido = validarTelefono(telefonoInput.value);
+        const nombreValido = validarNombre(nombreInput.value);
+        const fechaValida = validarFechaNacimiento(fechaInput.value);
 
         mostrarIcono(rutInput, rutValido);
         mostrarIcono(emailInput, emailValido);
         mostrarIcono(telefonoInput, telefonoValido);
+        mostrarIcono(nombreInput, nombreValido);
+        mostrarIcono(fechaInput, fechaValida);
 
-        if (!rutValido || !emailValido || !telefonoValido) {
-            alert('corregir campos')
+        if (!rutValido || !emailValido || !telefonoValido || !nombreValido || !fechaValida) {
+            alert('Corregir campos');
             e.preventDefault();
         }
     });
