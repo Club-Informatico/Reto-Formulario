@@ -1,0 +1,59 @@
+package handlers
+
+import (
+	"log"
+	"strconv"
+
+	"github.com/gin-gonic/gin"
+	db "github.com/juackomdz/reto-formulario/database"
+	"github.com/juackomdz/reto-formulario/models"
+)
+
+func Post_users(ctx *gin.Context) {
+
+	var dto models.UserDTO
+
+	if err := ctx.ShouldBind(&dto); err != nil {
+		log.Fatalln("error al bindiar=", err)
+	}
+
+	sql := "INSERT INTO users (nombre,rut,fecha_nacimiento,telefono,email) VALUES (?1,?2,?3,?4,?5)"
+
+	_, err := db.Conectar().Exec(sql, dto.Nombre, dto.Rut, dto.FechaNacimiento, dto.Telefono, dto.Email)
+	if err != nil {
+		log.Fatalln("error1=", err)
+	}
+
+	htmlRes := `
+	Usuario creado con exito.
+	`
+	ctx.String(200, htmlRes)
+}
+
+func Get_users(ctx *gin.Context) {
+
+	rows, err := db.Conectar().Query("SELECT * FROM users")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	for rows.Next() {
+		var data models.User
+		err := rows.Scan(&data.Id, &data.Nombre, &data.Rut, &data.FechaNacimiento, &data.Telefono, &data.Email)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		htmlBody := `
+					<tr>
+			        	<td>` + strconv.Itoa(data.Id) + `</td>
+			        	<td>` + data.Nombre + `</td>
+						<td>` + data.Rut + `</td>
+						<td>` + data.FechaNacimiento.Format("02-01-2006") + `</td>
+						<td>` + data.Telefono + `</td>
+						<td>` + data.Email + `</td>
+					</tr>
+					`
+		ctx.String(200, htmlBody)
+	}
+}
