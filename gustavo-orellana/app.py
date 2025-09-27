@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, redirect
 import sqlite3
 
-conexion = sqlite3.connect('gustavo-orellana/db.db')
+conexion = sqlite3.connect('../gustavo-orellana/db.db')
 cursor = conexion.cursor()
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS usuarios (
@@ -24,7 +24,7 @@ def index():
 @app.route('/add_usuario' , methods = ['POST'])
 
 def add_usuario():
-    conexion = sqlite3.connect('gustavo-orellana/db.db')
+    conexion = sqlite3.connect('../gustavo-orellana/db.db')
     cursor = conexion.cursor()
     if request.method == 'POST':
         nombre = request.form['nombre']
@@ -40,16 +40,17 @@ def add_usuario():
     
 @app.route('/usuarios')
 def mostrar_usuario():
-    conexion = sqlite3.connect('gustavo-orellana/db.db')
+    conexion = sqlite3.connect('../gustavo-orellana/db.db')
     cursor =conexion.cursor()
     cursor.execute('SELECT * FROM usuarios')
     usuarios = cursor.fetchall()
     conexion.close()
+
     return render_template('usuarios.html', usuarios = usuarios)
 
 @app.route('/eliminar_usuario/<int:id>', methods=['POST'])
 def eliminar_usuario(id):
-    conexion = sqlite3.connect('gustavo-orellana/db.db')
+    conexion = sqlite3.connect('../gustavo-orellana/db.db')
     cursor = conexion.cursor()
     cursor.execute('DELETE FROM usuarios WHERE id = ?', (id,))
     conexion.commit()

@@ -1,77 +1,56 @@
-# 📝 Reto #2 - Club Informático  
-**Formulario interactivo con validaciones y base de datos**  
+# Reto-Formulario
 
-¿Estás listo para poner a prueba tus habilidades en desarrollo web?  
-En este reto crearás un **formulario inteligente**, capaz de validar los datos en tiempo real con **expresiones regulares (RegEx)** y almacenar la información en una **base de datos SQLite**.  
+Este proyecto es una aplicación web simple en Flask para registrar y mostrar usuarios usando SQLite.
 
-🔗 Proyecto oficial: [Club-Informatico/Reto-Formulario](https://github.com/Club-Informatico/Reto-Formulario)
+## Requisitos
 
----
+- Python 3.8 o superior
+- pip
 
-## 🎯 Objetivo del Reto
-1. Diseñar un formulario en **HTML + CSS + JavaScript**.  
-2. Validar los siguientes campos con **expresiones regulares**:  
-   - Nombre completo  
-   - RUT chileno  
-   - Fecha de nacimiento  
-   - Teléfono  
-   - Email  
-3. Aplicar estilos interactivos en CSS:  
-   - ✅ Verde si cumple la condición.  
-   - ❌ Rojo si no cumple la condición.  
-4. Guardar los datos en una **base de datos SQLite** recomiendo **Flask (Python)**.  
+## Instalación
 
----
+1. **Clona este repositorio o descarga los archivos.**
 
-## 📂 Estructura del Repositorio
+2. **Instala Flask:**
 
-Cada participante debe crear **una carpeta con su nombre o nick** dentro del directorio principal, y allí agregar todo su proyecto (archivos HTML, CSS, JS, Python, base de datos, etc.).
+```bash
+pip install flask
+```
 
-Ejemplo de estructura:
+3. **Estructura de carpetas:**
 
-<img width="199" height="349" alt="image" src="https://github.com/user-attachments/assets/d6d3edd3-6009-486f-a5da-28d7c080fcf5" />
+```
+Reto-Formulario/
+│
+├── gustavo-orellana/
+│   ├── db.db
+│   ├── app.py
+│   └── templates/
+│       ├── index.html
+│       └── usuarios.html
+└── static/
+```
 
-👉 De esta forma, todos los aportes quedarán ordenados y será más fácil revisar cada propuesta.  
+4. **Ejecuta la aplicación:**
 
----
+Desde la carpeta donde está `app.py`, ejecuta:
 
-## 🚀 Requisitos
-- Conocimientos básicos de:
-  - HTML, CSS y JavaScript  
-  - Expresiones regulares (RegEx)  
-  - Python y Flask  
-  - SQLite  
-- Ganas de aprender y divertirse 💻🔥  
+```bash
+python app.py
+```
 
----
+5. **Abre tu navegador y ve a:**
 
-## 🏁 Cómo participar
-1. Haz un **fork** de este repositorio.  
-2. Crea tu versión del proyecto en tu fork.  
-3. Cuando tengas tu reto listo, envía un **Pull Request** para mostrar tu solución.  
+```
+http://127.0.0.1:5000/
+```
 
----
+## Uso
 
-## 🌟 Bonus (para quienes quieran ir más allá)
-- Agregar mensajes de error personalizados.  
-- Diseñar un formulario con un estilo único (ej: dark mode, estilo hacker 🕶️, etc.).  
-- Implementar validación tanto en el **frontend** como en el **backend**.  
+- Completa el formulario para agregar usuarios.
+- Haz clic en "Ver usuarios" para ver la lista.
+- Puedes eliminar usuarios usando el ícono de basura.
 
 ---
 
-## 📚 Recursos útiles
-- [Expresiones regulares en JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions)  
-- [Flask Documentation](https://flask.palletsprojects.com/)  
-- [SQLite Tutorial](https://www.sqlitetutorial.net/)  
-
----
-
-## 🎉 Comparte tu solución
-Este desafío no se trata solo de código, sino de **aprender y compartir**.  
-Súbelo, muéstralo y motiva a otros a unirse al Club Informático 🚀.  
-
----
-
-💡 **Tip:** No existe una única forma de resolver el reto. Sé creativo y atrévete a innovar.  
-
----
+**Nota:** La base de datos SQLite se crea automáticamente la primera vez que ejecutas la app.
