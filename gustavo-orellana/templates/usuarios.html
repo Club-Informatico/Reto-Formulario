@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Usuarios Registrados</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table table-bordered border-primary bg-white shadow">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Rut</th>
+                            <th>Fecha</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for usuario in usuarios %}
+                        <tr>
+                            <td>{{ usuario[1]}}</td>
+                            <td>{{ usuario[2]}}</td>
+                            <td>{{ usuario[3]}}</td>
+                            <td>{{ usuario[4]}}</td>
+                            <td>{{ usuario[5]}} </td>
+                            <td class="text-center">
+                                <form action="{{ url_for('eliminar_usuario', id=usuario[0]) }}" method="post" style="display:inline;">
+                                    <button type="submit" class="btn btn-link p-0 m-0" onclick="return confirm('¿Seguro que deseas eliminar este usuario?');">
+                                        <i class="fa-solid fa-trash text-danger"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="{{ url_for('index') }}" class="btn btn-primary btn-sm px-4">Volver</a>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/0d32c20498.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
