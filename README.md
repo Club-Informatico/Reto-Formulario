@@ -51,6 +51,3 @@ http://127.0.0.1:5000/
 - Haz clic en "Ver usuarios" para ver la lista.
 - Puedes eliminar usuarios usando el ícono de basura.
 
----
-
-**Nota:** La base de datos SQLite se crea automáticamente la primera vez que ejecutas la app.

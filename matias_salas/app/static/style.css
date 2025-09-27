@@ -1,0 +1,18 @@
+body { 
+  background: #fafafa; 
+}
+
+.invalid-feedback { 
+  min-height: 1.25rem;
+}
+
+input[aria-invalid="true"] { 
+  border-color: var(--bs-danger);
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--bs-card-bg);
+}

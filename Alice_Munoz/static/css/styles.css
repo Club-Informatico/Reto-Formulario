@@ -1,0 +1,118 @@
+/* Estilo base Matrix */
+body {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    background-color: #000000;
+    color: #00FF00; /* Verde Matrix */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-shadow: 0 0 5px #00FF00; /* Le da un ligero brillo al texto */
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.75); /* Fondo negro semi-transparente para que se vea el fondo de lluvia */
+    border: 1px solid #00FF00;
+    padding: 40px;
+    border-radius: 0; /* Bordes afilados */
+    box-shadow: 0 0 15px #00FF00;
+    width: 100%;
+    max-width: 550px;
+    z-index: 10; /* Para que esté por encima del fondo */
+}
+
+h1, h2, p, label {
+    color: #00FF00;
+}
+
+/* Estilos para los inputs y botones */
+input {
+    background-color: #0D0D0D;
+    border: 1px solid #008F11; /* Verde oscuro */
+    color: #00FF00;
+    font-family: inherit; /* Hereda la fuente monoespaciada */
+    padding: 12px 15px;
+    border-radius: 0;
+    box-sizing: border-box;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00FF00;
+    box-shadow: 0 0 8px #00FF00;
+}
+
+input::placeholder {
+    color: #008F11;
+    opacity: 0.7;
+}
+
+/* ¡El botón que te perturbaba ahora es verde! */
+button {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #00FF00;
+    background-color: transparent;
+    color: #00FF00;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    text-shadow: 0 0 5px #00FF00;
+}
+
+button:hover {
+    background-color: #00FF00;
+    color: #000000;
+}
+
+/* Clases de validación */
+.valid {
+    border-color: #00FF00 !important;
+}
+.invalid {
+    border-color: #FF0000 !important; /* Mantenemos rojo para errores, es universal */
+}
+
+.error-message {
+    color: #FF0000;
+    font-size: 12px;
+    height: 15px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Tabla de usuarios */
+th, td {
+    border: 1px solid #008F11;
+}
+th {
+    background-color: #051805;
+}
+
+/* Mensajes Flash */
+.flash.success {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00FF00;
+    color: #00FF00;
+}
+.flash.error {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #FF0000;
+    color: #FF0000;
+}
+
+/* Estilo para el fondo de MATRIX*/
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

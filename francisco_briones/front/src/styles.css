@@ -1,0 +1,300 @@
+/* Copied styles; unchanged functionality and design tokens */
+/* Light, clean theme with high contrast */
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e5e7eb;
+  --ring: #2563eb;
+  --ring-soft: rgba(37, 99, 235, 0.15);
+}
+/* Dark theme override (Reddit-like palette) */
+.theme-dark {
+  --bg: #1a1a1b;
+  --card: #272729;
+  --text: #d7dadc;
+  --muted: #818384;
+  --border: #343536;
+  --ring: #ff4500;
+  --ring-soft: rgba(255, 69, 0, 0.22);
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+.card.form-card {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+}
+.form-label {
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.form-text {
+  color: var(--muted);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+}
+.card.form-card h2,
+.card.form-card .h5 {
+  color: var(--text) !important;
+}
+.text-muted {
+  color: var(--muted) !important;
+}
+.container {
+  max-width: 820px;
+}
+.form-control,
+.react-datepicker-wrapper,
+.react-datepicker__input-container input {
+  width: 100% !important;
+}
+.form-control,
+.react-datepicker__input-container input {
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.form-control::placeholder,
+.react-datepicker__input-container input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem var(--ring-soft);
+  border-color: var(--ring);
+}
+.date-input {
+  position: relative;
+}
+.date-input .bi-calendar3 {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.react-datepicker {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+}
+.react-datepicker__header {
+  background-color: #f1f5f9;
+  border-bottom: 1px solid var(--border);
+}
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: var(--text);
+}
+.react-datepicker__day,
+.react-datepicker__time-name {
+  color: #334155;
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--ring);
+  color: #fff;
+}
+.react-datepicker__day:hover {
+  background-color: rgba(37, 99, 235, 0.12);
+}
+.theme-dark .react-datepicker {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+}
+.theme-dark .react-datepicker__header {
+  background-color: #111827;
+  border-bottom: 1px solid var(--border);
+}
+.theme-dark .react-datepicker__current-month,
+.theme-dark .react-datepicker__day-name {
+  color: var(--text);
+}
+.theme-dark .react-datepicker__day,
+.theme-dark .react-datepicker__time-name {
+  color: #cbd5e1;
+}
+.theme-dark .react-datepicker__day--selected,
+.theme-dark .react-datepicker__day--keyboard-selected {
+  background-color: var(--ring);
+  color: #0b1220;
+}
+.table {
+  color: var(--text);
+  background: var(--card);
+}
+.table thead th {
+  color: var(--text);
+  background: color-mix(in oklab, var(--card) 88%, white 12%);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+.table > :not(caption) > * > * {
+  border-color: var(--border);
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background: color-mix(in oklab, var(--card) 92%, white 8%);
+}
+.table-striped tbody tr:nth-of-type(even) {
+  background: var(--card);
+}
+.theme-dark .table thead th {
+  background: color-mix(in oklab, var(--card) 86%, white 14%);
+}
+.theme-dark .table-striped tbody tr:nth-of-type(odd) {
+  background: color-mix(in oklab, var(--card) 90%, white 10%);
+}
+.theme-dark .table-striped tbody tr:nth-of-type(even) {
+  background: var(--card);
+}
+.empty-state {
+  color: color-mix(in oklab, var(--text) 85%, var(--muted) 15%);
+}
+.empty-state .bi {
+  color: inherit;
+  opacity: 0.95;
+}
+.btn-primary {
+  background-color: var(--ring);
+  border-color: var(--ring);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: color-mix(in oklab, var(--ring) 85%, white 15%);
+  border-color: color-mix(in oklab, var(--ring) 85%, white 15%);
+  box-shadow: 0 0 0 0.2rem var(--ring-soft);
+}
+.btn-outline-primary {
+  color: var(--ring);
+  border-color: var(--ring);
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: #fff;
+  background-color: var(--ring);
+  border-color: var(--ring);
+  box-shadow: 0 0 0 0.2rem var(--ring-soft);
+}
+.dp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+}
+.dp-nav {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+.dp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+.dp-btn:hover {
+  box-shadow: 0 0 0 0.2rem var(--ring-soft);
+  border-color: var(--ring);
+}
+.dp-select {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  background: var(--card);
+  color: var(--text);
+}
+.is-valid,
+.is-invalid {
+  padding-right: 2.25rem;
+}
+.form-control.is-valid,
+.form-control.is-invalid {
+  background-position: right calc(0.375em + 0.1875rem) center;
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.section-title .bi {
+  color: var(--ring);
+}
+.form-actions {
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    var(--card),
+    color-mix(in oklab, var(--card) 80%, transparent)
+  );
+  border-top: 1px solid var(--border);
+}
+.toast-wrap {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1055;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.toast-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.08);
+}
+.toast-item.success {
+  border-color: #86efac;
+}
+.toast-item.error {
+  border-color: #fda4af;
+}
+.toast-enter {
+  animation: toastIn 0.2s ease-out both;
+}
+.toast-exit {
+  animation: toastOut 0.18s ease-in both;
+}
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}

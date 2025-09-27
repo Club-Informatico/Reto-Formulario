@@ -1,0 +1,10 @@
+# Python venv
+.venv/
+__pycache__/
+
+# DB
+data.db
+
+# OS/IDE
+.DS_Store
+*.log
