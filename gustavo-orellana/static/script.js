@@ -18,7 +18,6 @@ function validarFechaNacimiento(fecha) {
     if (!fecha) return false;
     const hoy = new Date();
     const fechaIngresada = new Date(fecha);
-    // Solo compara fechas, no horas
     hoy.setHours(0,0,0,0);
     fechaIngresada.setHours(0,0,0,0);
     return fechaIngresada < hoy;

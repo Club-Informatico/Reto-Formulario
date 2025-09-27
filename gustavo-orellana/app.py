@@ -37,5 +37,24 @@ def add_usuario():
         conexion.close()
         print('Datos ingresados correctamente')
         return redirect('/')
+    
+@app.route('/usuarios')
+def mostrar_usuario():
+    conexion = sqlite3.connect('gustavo-orellana/db.db')
+    cursor =conexion.cursor()
+    cursor.execute('SELECT * FROM usuarios')
+    usuarios = cursor.fetchall()
+    conexion.close()
+    return render_template('usuarios.html', usuarios = usuarios)
+
+@app.route('/eliminar_usuario/<int:id>', methods=['POST'])
+def eliminar_usuario(id):
+    conexion = sqlite3.connect('gustavo-orellana/db.db')
+    cursor = conexion.cursor()
+    cursor.execute('DELETE FROM usuarios WHERE id = ?', (id,))
+    conexion.commit()
+    conexion.close()
+    return redirect('/usuarios')
+
 if __name__ == '__main__':
     app.run(debug=True)
